@@ -1,0 +1,32 @@
+<template>
+<div class="container">
+  <form class="form-inline">
+    <label>Nome</label>
+    <input type="text" class="form-control" value.bind="nome"/>
+    <label>Sobrenome</label> 
+    <input type="text" class="form-control" value.bind="sobreNome" />
+
+     <button class="btn btn-create" click.trigger="Add()">Criar</button>
+
+    <b>Nome Completo:</b> <tt>${NomeCompleto}</tt>
+  </form>
+</div>
+
+<div class="container">
+  <ul>
+    <li repeat.for="p of pessoas">
+      <span show.bind="$parent.editing !== $index">
+            ${p} 
+              <button click.trigger="$parent.Edit($index)">Editar</button>
+      </span>
+
+      <span show.bind="$parent.editing === $index">
+        <input type="text" value.bind="$parent.newValue">
+        <button click.trigger="$parent.Save($index)">Salvar</button>
+      </span>
+      
+      <button click.trigger="$parent.Delete($index)">Excluir</button>
+    </li>
+  </ul>
+</div>
+</template>
