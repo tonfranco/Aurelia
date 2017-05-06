@@ -15,8 +15,9 @@
 <div class="container">
   <ul>
     <li repeat.for="p of pessoas">
+        
       <span show.bind="$parent.editing !== $index">
-            ${p} 
+      ${p} ${pessoas[$index]}
               <button click.trigger="$parent.Edit($index)">Editar</button>
       </span>
 
