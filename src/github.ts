@@ -25,9 +25,9 @@ export class GitHub{
         
         await this.busy.delay(3000);
 
-        var data = this.http.fetch("")
-                    .then(response => response.json())
-                    .then(rep => this.repos = rep);
+        this.http.fetch("")
+                .then(response => response.json())
+                .then(rep => this.repos = rep);
 
         this.busy.off();
     }

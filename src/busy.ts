@@ -10,7 +10,6 @@ export class busy {
   off() 
   { 
     this.active = false; 
-    console.log("deixando false:" + this.active);
   }
 
   delay(ms: number) {
