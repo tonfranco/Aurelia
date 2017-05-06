@@ -1,0 +1,40 @@
+<template>
+ <div class="container"> 
+    <div class="alert alert-info" role="alert">
+        <a href="#" class="alert-link">Repositórios</a>
+    </div> 
+    <form role="search" class="navbar-form navbar-left">
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-search"></span></span>
+            <input type="text" class="form-control"  required value.bind="nmBusca" placeholder="repositório...">         
+            <span class="input-group-btn">
+                <button click.trigger="pesquisar()" class="btn btn-default">Procurar</button>
+            </span>
+        </div>    
+    </form>
+    <span class="">
+        <div show.bind="busy.active">
+            <img width="50px" height="50px" src.bind="'src/resources/loading.gif'"/>
+        </div> 
+    </span> 
+
+    <table class="table table-responsive">
+        <thead class="thead-inverse">
+            <th>#</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Clone URL</th>
+            <th>Colaboradores</th>
+        </thead>
+        <tbody repeat.for="rep of repos">
+            <tr>
+                <th scope.bind="$index"></th>
+                <td><a href.bind="rep.html_url">${rep.name}</a></td>
+                <td>${rep.description}</td>
+                <td><a href.bind="rep.clone_url">${rep.clone_url}</a></td>
+                <td><a href.bind="rep.collaborators_url">${rep.collaborators_url}</a></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</template>
