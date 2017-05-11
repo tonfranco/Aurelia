@@ -1,12 +1,11 @@
 export class App {
   router;
-  configureRouter(config, router)
-  {
+  configureRouter(config, router) {
     this.router = router;
 
     config.map([
       {
-        route: ["","pessoa"],
+        route: ["", "pessoa"],
         moduleId: "pessoa",
         title: "Pessoas",
         nav: true
