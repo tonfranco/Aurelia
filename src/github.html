@@ -27,7 +27,7 @@
           <th>Clone URL</th>
         </thead>
         <tbody repeat.for="rep of repos">
-          <tr class="active">
+          <tr class="info">
             <th scope.bind="$index"></th>
             <td><a href.bind="rep.html_url">${rep.name}</a></td>
             <td>${rep.description}</td>
